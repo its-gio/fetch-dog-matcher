@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import fonts from "@/components/fonts";
+import NavBar from "@/components/navigation/NavBar";
 
 export const metadata: Metadata = {
   title: "Puppy Love",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fonts} antialiased`}>
+        <NavBar />
         {children}
         <footer className="">Footer</footer>
       </body>
