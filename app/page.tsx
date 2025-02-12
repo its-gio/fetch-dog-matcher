@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main id="homepage">
-      <div className="hero relative h-screen flex text-center justify-center items-center overflow-hidden">
+      <div className="hero relative h-screen flex text-center justify-center items-center overflow-hidden text-zinc-100">
         <div>
           <h1 className="text-8xl font-barlow-condensed">
             Find your Best Friend!
