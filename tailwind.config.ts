@@ -12,6 +12,20 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        "barlow-condensed": [
+          "var(--font-barlow-condensed)",
+          "Arial",
+          "Helvetica",
+          "sans-serif",
+        ],
+        montserrat: [
+          "var(--font-montserrat)",
+          "Arial",
+          "Helvetica",
+          "sans-serif",
+        ],
+      },
     },
   },
   plugins: [],

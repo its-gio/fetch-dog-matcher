@@ -3,8 +3,12 @@ export default function Home() {
     <main id="homepage">
       <div className="hero relative h-screen flex text-center justify-center items-center overflow-hidden">
         <div>
-          <h1>Find your Best Friend!</h1>
-          <h4>For those tired of chasing their tails</h4>
+          <h1 className="text-8xl font-barlow-condensed">
+            Find your Best Friend!
+          </h1>
+          <h4 className="text-xl font-montserrat">
+            For those tired of chasing their tails
+          </h4>
         </div>
 
         <video
