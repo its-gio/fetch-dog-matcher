@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import PuppyLoveLogo from "@/public/puppy-love-logo.svg";
 import Link from "next/link";
+import LoginBtn from "../buttons/LoginBtn";
 
 function NavBar() {
   return (
@@ -13,12 +14,7 @@ function NavBar() {
       </div>
 
       <div>
-        <button
-          type="button"
-          className="flex text-sm rounded-full md:me-0 bg-slate-500 p-4 hover:bg-slate-300 text-white hover:text-black"
-        >
-          <span className="block text-sm ">Get Started</span>
-        </button>
+        <LoginBtn text={"Get Started"} />
 
         <button
           type="button"

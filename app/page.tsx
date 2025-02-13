@@ -1,3 +1,5 @@
+import LoginBtn from "@/components/buttons/LoginBtn";
+
 export default function Home() {
   return (
     <main id="homepage">
@@ -6,13 +8,7 @@ export default function Home() {
         <h4 className="text-xl font-montserrat">
           For those tired of chasing their tails
         </h4>
-        <button
-          type="button"
-          className="flex text-sm rounded-full md:me-0 bg-slate-500 p-4 hover:bg-slate-300 text-white hover:text-black"
-        >
-          <span className="block text-sm ">Start Search!</span>
-        </button>
-
+        <LoginBtn text={"Start Search!"} />
         <video
           autoPlay
           loop
