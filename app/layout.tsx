@@ -3,6 +3,7 @@ import "./globals.css";
 import fonts from "@/components/fonts";
 import NavBar from "@/components/navigation/NavBar";
 import GlobalFooter from "@/components/GlobalFooter";
+import LoginForm from "@/components/login/LoginForm";
 
 export const metadata: Metadata = {
   title: "Puppy Love",
@@ -17,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fonts} antialiased`}>
+        <LoginForm />
         <NavBar />
         {children}
+
         <GlobalFooter />
       </body>
     </html>
