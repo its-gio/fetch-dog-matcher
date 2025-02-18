@@ -2,9 +2,16 @@ import Image from "next/image";
 import React from "react";
 import PuppyLoveLogo from "@/public/puppy-love-logo.svg";
 import Link from "next/link";
-import LoginBtn from "../buttons/LoginBtn";
+import { GeneralBtn } from "../buttons";
+import { cookies } from "next/headers";
+import { deleteSession } from "../_lib/session";
 
-function NavBar() {
+async function NavBar() {
+  const cookieStore = await cookies();
+  const userSession = cookieStore.get("session")?.value;
+
+  console.log({ userSession });
+
   return (
     <header className="sticky top-0 shadow-xs bg-white bg-opacity-95 w-full px-10 py-5 z-10 flex justify-between align-center mb-[-92px]">
       <div className="logo flex items-center">
@@ -14,7 +21,14 @@ function NavBar() {
       </div>
 
       <div>
-        <LoginBtn text={"Get Started"} />
+        {userSession ? (
+          <GeneralBtn text={"Logout"} action={deleteSession} />
+        ) : (
+          <GeneralBtn
+            text={"Get Started"}
+            action={() => console.log("Getting Started")}
+          />
+        )}
 
         <button
           type="button"

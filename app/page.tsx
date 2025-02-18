@@ -1,4 +1,4 @@
-import LoginBtn from "@/components/buttons/LoginBtn";
+import { GeneralBtn } from "@/components/buttons";
 
 export default function Home() {
   return (
@@ -8,7 +8,10 @@ export default function Home() {
         <h4 className="text-xl font-montserrat">
           For those tired of chasing their tails
         </h4>
-        <LoginBtn text={"Start Search!"} />
+        <GeneralBtn
+          text={"Start Search!"}
+          action={() => console.log("Start Search")}
+        />
         <video
           autoPlay
           loop

@@ -52,6 +52,8 @@ export async function verifySession() {
   const cookie = (await cookies()).get(cookieSettings.name)?.value || "";
   const session = await dencrypt(cookie);
   if (!session) return redirect("/");
+
+  return session;
 }
 
 export async function deleteSession() {
