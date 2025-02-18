@@ -3,20 +3,31 @@
 import { createSession } from "@/components/_lib/session";
 import { z } from "zod";
 
+type ErrorsType =
+  | {
+      errors: {
+        name?: string[] | undefined;
+        email?: string[] | undefined;
+      };
+    }
+  | undefined;
+
 const userSchema = z.object({
   name: z.string().min(2, "Name is required"),
   email: z.string().email("Invalid email address"),
 });
 
-export async function login(previousState: void | null, formData: FormData) {
+export async function login(
+  previousState: ErrorsType | null,
+  formData: FormData
+): Promise<ErrorsType> {
   const safeResults = userSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
   });
 
   if (!safeResults.success) {
-    const errors = safeResults.error.flatten().fieldErrors;
-    return console.error(errors);
+    return { errors: safeResults.error.flatten().fieldErrors };
   }
 
   const { name, email } = safeResults.data;

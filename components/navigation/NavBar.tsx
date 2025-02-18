@@ -15,28 +15,26 @@ async function NavBar() {
   return (
     <header className="sticky top-0 shadow-xs bg-white bg-opacity-95 w-full px-10 py-5 z-10 flex justify-between align-center mb-[-92px]">
       <div className="logo flex items-center">
-        <Link href="/" className="">
+        <Link href="/">
           <Image src={PuppyLoveLogo} alt="Puppy Love Logo" width={150} />
         </Link>
       </div>
 
-      <div>
-        {userSession ? (
-          <GeneralBtn text={"Logout"} action={deleteSession} />
-        ) : (
-          <GeneralBtn text={"Get Started"} action={deleteSession} />
-        )}
-
-        <button
-          type="button"
-          className="flex text-sm  rounded-full md:me-0 hidden"
-        >
-          <div className="px-4 py-3">
-            <span className="block text-sm text-gray-900 ">John Doe</span>
-            <span className="block text-sm  text-gray-400">name@test.com</span>
-          </div>
-        </button>
-      </div>
+      {userSession ? (
+        <div>
+          <GeneralBtn text={"Logout"} onClick={deleteSession} />
+          <button type="button" className="flex text-sm  rounded-full md:me-0">
+            <div className="px-4 py-3">
+              <span className="block text-sm">John Doe</span>
+              <span className="block text-sm  text-gray-400">
+                name@test.com
+              </span>
+            </div>
+          </button>
+        </div>
+      ) : (
+        <GeneralBtn text={"Get Started"} />
+      )}
     </header>
   );
 }

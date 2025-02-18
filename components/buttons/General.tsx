@@ -3,18 +3,19 @@ import React from "react";
 
 export default function GeneralBtn({
   text,
-  action,
+  ...props
 }: {
   text: string;
-  action: () => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
 }) {
   return (
     <button
       type="button"
       className="flex text-sm rounded-full md:me-0 p-4 invert-bg hover:bg-slate-300 hover:text-black"
-      onClick={action}
+      {...props}
     >
-      <span className="block text-sm ">{text}</span>
+      {text}
     </button>
   );
 }

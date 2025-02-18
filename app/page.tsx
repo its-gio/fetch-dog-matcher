@@ -1,15 +1,17 @@
-import { deleteSession } from "@/components/_lib/session";
 import { GeneralBtn } from "@/components/buttons";
+import LoginForm from "@/components/login/LoginForm";
 
 export default function Home() {
   return (
     <main id="homepage">
+      <LoginForm />
+
       <div className="hero relative h-screen flex text-center flex-col gap-4 justify-center items-center overflow-hidden text-zinc-100">
         <h1 className="text-8xl font-bold">Find Your Best Friend!</h1>
         <h4 className="text-xl font-montserrat">
           For those tired of chasing their tails
         </h4>
-        <GeneralBtn text={"Start Search!"} action={deleteSession} />
+        <GeneralBtn text={"Start Search!"} />
         <video
           autoPlay
           loop
