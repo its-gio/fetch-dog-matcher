@@ -24,10 +24,7 @@ async function NavBar() {
         {userSession ? (
           <GeneralBtn text={"Logout"} action={deleteSession} />
         ) : (
-          <GeneralBtn
-            text={"Get Started"}
-            action={() => console.log("Getting Started")}
-          />
+          <GeneralBtn text={"Get Started"} action={deleteSession} />
         )}
 
         <button

@@ -11,7 +11,7 @@ export default function GeneralBtn({
   return (
     <button
       type="button"
-      className="flex text-sm rounded-full md:me-0 bg-slate-500 p-4 hover:bg-slate-300 text-white hover:text-black"
+      className="flex text-sm rounded-full md:me-0 p-4 invert-bg hover:bg-slate-300 hover:text-black"
       onClick={action}
     >
       <span className="block text-sm ">{text}</span>
